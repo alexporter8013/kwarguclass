@@ -15,14 +15,12 @@ def kwarguclass_enable(fun):
     if target_kwclass is None or not isinstance(target_kwclass, type):
         raise KwargumentEnableError("kwarg must be annotated with a class")
     target_kwclass_sig = inspect.signature(target_kwclass)
-    print(target_kwclass_sig)
     bad_kwclass_params = []
     for param in target_kwclass_sig.parameters.values():
         valid = (
             param.kind == param.KEYWORD_ONLY
             or param.kind == param.POSITIONAL_OR_KEYWORD
         )
-        print(param, valid)
         if not valid:
             bad_kwclass_params.append(param)
     if len(bad_kwclass_params) > 0:
@@ -31,7 +29,6 @@ def kwarguclass_enable(fun):
         valid = (
             param.default != param.empty
         )
-        print(param, param.default, valid)
         if not valid:
             bad_kwclass_params.append(param)
     if len(bad_kwclass_params) > 0:
