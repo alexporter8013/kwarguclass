@@ -1,0 +1,4 @@
+
+
+class KwargumentEnableError(Exception):
+    pass

@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "kwarguclass"
+version = "0.1.0"
+description = "Simple library for condensing many keyword arguments into a single dataclass."
+authors = ["Alex Porter <bomber8013@gmail.com>"]
+readme = "README.md"
+packages = [
+    { include = "kwarguclass" },
+]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry-dynamic-versioning]
+enable = true
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
+build-backend = "poetry_dynamic_versioning.backend"
