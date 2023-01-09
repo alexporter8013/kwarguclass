@@ -4,7 +4,7 @@ from kwarguclass import kwarguclass_enable, kwarguclass
 
 @kwarguclass
 class AllTheArgs:
-    salutation: str
+    salutation: str = "Hello"
     trailing_char: str = "!"
     num_trailing_chars: int = 1
 
